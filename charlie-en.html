@@ -537,6 +537,10 @@
             /* Content full width */
             .content { margin-left: 0; }
 
+            .hero-lang { display: none; }
+            .lang-section { display: none !important; }
+
+
             /* Sections padding */
             section { padding: 36px 18px; }
             .hero { padding: 36px 18px; min-height: auto; }
@@ -960,13 +964,231 @@
 
         .nav-link-subtle {
             opacity: 0.6;
-            font-size: 13px !important;
+            font-size: 16px !important;
         }
 
         .nav-link-subtle:hover,
         .nav-link-subtle.active {
             opacity: 1;
         }
+
+        /* ===== FLAG ICONS (Windows compatible) ===== */
+        .flag-icon {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 1px 4px;
+            border-radius: 3px;
+            margin-right: 3px;
+            vertical-align: middle;
+        }
+        #bar-cs .flag-icon, .lang-btn[href="index2.html"] .flag-icon,
+        .lang-btn[href="charlie-cs.html"] .flag-icon {
+            background: #d52b1e;
+            color: white;
+        }
+        #bar-en .flag-icon, .lang-btn[href="charlie-en2.html"] .flag-icon {
+            background: #012169;
+            color: white;
+        }
+
+        /* ===== MAX WIDTH FOR WIDE MONITORS ===== */
+        .content {
+            max-width: 1100px;
+        }
+
+        /* ===== LANG SWITCHER IN HERO (desktop) ===== */
+        .lang-section {
+            display: none;
+        }
+        .hero-lang {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        .hero-lang a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.7);
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .hero-lang a:hover { background: white; }
+        .hero-lang a.active-lang { border-color: var(--coral); background: white; }
+
+        /* ===== AIRY OVERRIDES ===== */
+
+        /* More breathing room everywhere */
+        section {
+            padding: 100px 80px !important;
+        }
+
+        /* Cleaner background — pure white sections alternating with very light grey */
+        .about { background: #fafafa !important; }
+        .contact { background: #ffffff !important; }
+        .gallery-section { background: #fafafa !important; }
+        .social-section { background: #ffffff !important; }
+        .donate-section { background: #fafafa !important; }
+
+        /* Hero — bigger, more space */
+        .hero {
+            min-height: 460px !important;
+            background: #ffffff !important;
+        }
+        .hero::before { display: none !important; }
+
+        .hero-text .greeting {
+            font-size: 18px !important;
+            letter-spacing: 3px !important;
+            color: #999 !important;
+            font-weight: 400 !important;
+        }
+
+        .hero-text h1 {
+            font-size: 72px !important;
+            letter-spacing: -1px !important;
+            line-height: 1.1 !important;
+        }
+
+        .hero-text .tagline {
+            font-size: 18px !important;
+            color: #888 !important;
+            font-weight: 400 !important;
+            max-width: 420px !important;
+            line-height: 1.7 !important;
+        }
+
+        /* Section titles — lighter, more elegant */
+        .section-title {
+            font-size: 16px !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase !important;
+            color: #aaa !important;
+            font-weight: 600 !important;
+            margin-bottom: 50px !important;
+            padding-bottom: 0 !important;
+            border: none !important;
+        }
+        .section-title::after {
+            display: none !important;
+        }
+
+        /* About — more space, lighter text */
+        .about-grid { gap: 60px !important; }
+        .about-text p {
+            font-size: 17px !important;
+            line-height: 2 !important;
+            color: #666 !important;
+        }
+        .about-photo {
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 20px !important;
+        }
+
+        /* Tags — minimal pill style */
+        .tags { gap: 10px !important; margin-top: 28px !important; }
+        .tag {
+            background: #f4f4f4 !important;
+            color: #555 !important;
+            border: none !important;
+            border-radius: 100px !important;
+            padding: 6px 16px !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            box-shadow: none !important;
+        }
+        .tag a { color: #555 !important; }
+
+        /* Contact cards — flat, no heavy shadows */
+        .contact-cards { gap: 20px !important; }
+        .contact-card {
+            border: 1px solid #eee !important;
+            border-radius: 16px !important;
+            box-shadow: none !important;
+            padding: 32px !important;
+            background: #fff !important;
+        }
+        .contact-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+            transform: translateY(-2px) !important;
+        }
+        .contact-card .icon {
+            background: #f4f4f4 !important;
+            color: #1a7a7a !important;
+            box-shadow: none !important;
+        }
+        .contact-card h3 { color: #999 !important; font-size: 11px !important; letter-spacing: 2px !important; }
+        .contact-card p, .contact-card a { font-size: 16px !important; color: #333 !important; }
+
+        /* Gallery — more space between photos */
+        .gallery-grid { gap: 20px !important; }
+        .gallery-img {
+            border: none !important;
+            border-radius: 16px !important;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+        }
+        .gallery-img:hover {
+            transform: scale(1.02) !important;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+        }
+
+        /* Social cards — flat */
+        .social-grid { gap: 20px !important; }
+        .social-card {
+            border: 1px solid #eee !important;
+            border-radius: 16px !important;
+            box-shadow: none !important;
+            background: #fff !important;
+        }
+        .social-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+            transform: translateY(-2px) !important;
+        }
+        .social-card.instagram { background: #fff !important; }
+        .social-card.facebook { background: #fff !important; }
+        .social-card-text h3 { color: #222 !important; }
+        .social-card-text p { color: #777 !important; }
+
+        /* Donate — clean */
+        .donate-section { text-align: center !important; }
+        .donate-text p { font-size: 17px !important; color: #555 !important; line-height: 1.9 !important; }
+
+        /* Sidebar — lighter */
+        .sidebar { background: #1e1e1e !important; }
+        .sidebar-name { font-size: 20px !important; letter-spacing: 1px !important; }
+        nav ul li a {
+            font-size: 16px !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
+            padding: 10px 28px !important;
+            color: #aaa !important;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: #fff !important;
+            background: none !important;
+            border-left-color: #1a7a7a !important;
+        }
+
+        /* Footer */
+        footer { background: #1e1e1e !important; color: #666 !important; }
+
+        /* Fix lightbox image override from airy CSS */
+        .lightbox img {
+            max-width: 90vw !important;
+            max-height: 88vh !important;
+            border-radius: 12px !important;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5) !important;
+            border: none !important;
+        }
+        .lightbox { cursor: pointer; }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
@@ -980,8 +1202,8 @@
     <div class="sidebar-tagline" data-lang="en">adventurous cat about town</div>
 
     <div class="lang-switcher">
-        <a class="lang-btn " href="index.html">🇨🇿 CS</a>
-        <a class="lang-btn active" href="charlie-en.html">🇬🇧 EN</a>
+        <a class="lang-btn " href="index2.html"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> CZ</a>
+        <a class="lang-btn active" href="charlie-en2.html"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> EN</a>
     </div>
 
     <nav>
@@ -1064,12 +1286,16 @@
             <p class="tagline" data-lang="en">Your new buddy in Letná. Feel free to pet me — I'm friendly!</p>
         </div>
         
+    <div class="hero-lang">
+        <a href="index2.html"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> Česky</a>
+        <a href="charlie-en2.html" class="active-lang"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> English</a>
+    </div>
     </section>
 
-    <!-- LANGUAGE SWITCHER BAR -->
+    <!-- LANGUAGE SWITCHER BAR (mobile only) -->
     <div class="lang-section">
-        <a href="index.html" id="bar-cs" class="">🇨🇿 Česky</a>
-        <a href="charlie-en.html" id="bar-en" class="active-lang">🇬🇧 English</a>
+        <a href="index2.html" id="bar-cs" class=""><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> Česky</a>
+        <a href="charlie-en2.html" id="bar-en" class="active-lang"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> English</a>
     </div>
 
     <!-- ABOUT -->
@@ -1179,8 +1405,8 @@
         </div>
         <!-- Lightbox -->
         <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close">✕</span>
-            <img id="lightbox-img" src="" alt="Charlie" style="display:none;">
+            <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+            <img id="lightbox-img" src="" alt="Charlie" style="display:none;" onclick="event.stopPropagation()">
         </div>
     </section>
 
