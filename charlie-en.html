@@ -28,12 +28,10 @@
 
         /* ===== SIDEBAR ===== */
         .sidebar {
-            position: sticky;
-            top: 0;
+            position: fixed;
+            top: 0; left: 0;
             width: var(--sidebar-w);
-            min-width: var(--sidebar-w);
-            height: 100vh;
-            align-self: flex-start;
+            height: 100%;
             background: var(--dark);
             z-index: 100;
             display: flex;
@@ -168,9 +166,9 @@
 
         /* ===== MAIN CONTENT ===== */
         .content {
-            flex: 1;
-            min-width: 0;
+            margin-left: var(--sidebar-w);
             min-height: 100vh;
+            max-width: 1095px;
         }
 
         /* ===== SECTIONS ===== */
