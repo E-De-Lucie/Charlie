@@ -21,7 +21,7 @@
 
         body {
             font-family: 'Nunito', sans-serif;
-            background: var(--yellow);
+            background: #2a3d3d;
             color: #444;
             overflow-x: hidden;
         }
@@ -643,7 +643,7 @@
         
         /* ===== OWNERS ===== */
         .owners-section {
-            background: var(--yellow);
+            background: #2a3d3d;
             border-bottom: 28px solid var(--dark);
         }
 
@@ -1035,7 +1035,7 @@
         .contact { background: #ffffff !important; }
         .gallery-section { background: #fafafa !important; }
         .social-section { background: #ffffff !important; }
-        .donate-section { background: #fafafa !important; }
+        .donate-section { background: #f0f2f2 !important; }
 
         /* Hero — bigger, more space */
         .hero {
@@ -1189,6 +1189,22 @@
             border: none !important;
         }
         .lightbox { cursor: pointer; }
+
+        /* ===== REMOVE ALL YELLOW ===== */
+        .qr-caption { color: #ccc !important; }
+        * { border-bottom-color: transparent !important; }
+        .about, .contact, .gallery-section, .social-section, .donate-section,
+        .hero, section { border-bottom: none !important; border-top: none !important; }
+        .lang-section { border: none !important; background: #2a3d3d !important; }
+        .lang-section a { color: #ccc !important; }
+        .lang-section a.active-lang { outline: 2px solid #1a7a7a !important; color: white !important; }
+        .donate-section { background: #1e2e2e !important; }
+        .donate-section .section-title { color: #aaa !important; }
+        .donate-section .donate-text p { color: #ccc !important; }
+        .donate-section .donate-note { color: #aaa !important; }
+        .donate-section .qr-account { color: #ccc !important; }
+        .qr-label { color: #aaa !important; }
+        [style*="color: var(--yellow)"], .naskenujte { color: #1a7a7a !important; }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
@@ -1391,9 +1407,6 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="foto1.jpg" alt="Charlie" class="gallery-img" onclick="openLightbox(this.src)">
-            </div>
-            <div class="gallery-item">
                 <img src="foto2.jpg" alt="Charlie" class="gallery-img" onclick="openLightbox(this.src)">
             </div>
             <div class="gallery-item">
@@ -1402,11 +1415,14 @@
             <div class="gallery-item">
                 <img src="foto4.jpg" alt="Charlie" class="gallery-img" onclick="openLightbox(this.src)">
             </div>
+            <div class="gallery-item">
+                <img src="foto5.jpg" alt="Charlie" class="gallery-img" onclick="openLightbox(this.src)">
+            </div>
         </div>
         <!-- Lightbox -->
-        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-            <span class="lightbox-close" onclick="closeLightbox()">✕</span>
-            <img id="lightbox-img" src="" alt="Charlie" style="display:none;" onclick="event.stopPropagation()">
+        <div id="lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;cursor:pointer;" onclick="closeLightbox()">
+            <span style="position:absolute;top:20px;right:30px;color:white;font-size:36px;line-height:1;cursor:pointer;z-index:10000;" onclick="closeLightbox()">✕</span>
+            <img id="lightbox-img" src="" alt="Charlie" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:90vw;max-height:90vh;border-radius:12px;cursor:default;" onclick="event.stopPropagation()">
         </div>
     </section>
 
@@ -1566,14 +1582,17 @@ e(s.colorDepth)+'" width="1" height="1" border="0" alt="TOPlist" />';
     }
 
     function openLightbox(src) {
+        const lb = document.getElementById('lightbox');
         const img = document.getElementById('lightbox-img');
         img.src = src;
         img.style.display = 'block';
-        document.getElementById('lightbox').classList.add('open');
+        lb.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('open');
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = '';
     }
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
