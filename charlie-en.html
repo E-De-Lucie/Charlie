@@ -548,7 +548,7 @@
             .hero-emoji { display: none; }
 
             /* About grid single column */
-            .about-grid { grid-template-columns: 1fr; gap: 24px; }
+            .about-grid { grid-template-columns: auto 1fr; gap: 16px; align-items: start; }
             .about-photo { max-height: 260px; }
 
             /* Contact cards 2 cols then full for map */
@@ -1287,6 +1287,14 @@
                 margin-left: 8px;
             }
         }
+
+        @media (max-width: 768px) {
+            .about-photo { max-height: 200px !important; width: auto !important; }
+        }
+    
+        @media (max-width: 768px) {
+            .hero-paw-emoji { display: none !important; }
+        }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
@@ -1379,7 +1387,7 @@
                 
                 Hello, my name is
             </div>
-            <h1>Charlie <span class="hero-paw"><span class="hero-paw-emoji">🐾</span><img src="menu.jpg" class="hero-paw-img" alt=""></span></h1>
+            <h1>Charlie <span class="hero-paw-emoji">🐾</span></h1>
             
             <p class="tagline" data-lang="en">Your new buddy in Letná. Feel free to pet me — I'm friendly!</p>
         </div>
