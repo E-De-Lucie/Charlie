@@ -1251,6 +1251,42 @@
         @media (max-width: 768px) {
             .tag-break { display: block; }
         }
+
+        /* ===== MOBILE H1 SPAN FIX ===== */
+        @media (max-width: 768px) {
+            .hero-text h1 span {
+                font-size: inherit !important;
+                display: inline !important;
+                vertical-align: middle !important;
+                line-height: 1 !important;
+            }
+            .lang-section {
+                justify-content: center !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 50px 20px !important; }
+            .social-grid, .contact-cards, .gallery-grid { padding: 0 !important; }
+            .social-card, .contact-card { margin: 0 !important; box-sizing: border-box !important; width: 100% !important; }
+        }
+
+        .hero-paw-img {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .hero-paw-emoji { display: none; }
+            .hero-paw-img {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                vertical-align: middle;
+                border: 3px solid var(--coral);
+                margin-left: 8px;
+            }
+        }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
@@ -1343,7 +1379,7 @@
                 
                 Hello, my name is
             </div>
-            <h1>Charlie <span>🐾</span></h1>
+            <h1>Charlie <span class="hero-paw"><span class="hero-paw-emoji">🐾</span><img src="menu.jpg" class="hero-paw-img" alt=""></span></h1>
             
             <p class="tagline" data-lang="en">Your new buddy in Letná. Feel free to pet me — I'm friendly!</p>
         </div>
