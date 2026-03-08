@@ -1349,8 +1349,9 @@
             .sidebar {
                 position: fixed !important;
                 top: 0 !important;
-                left: 50% !important;
-                transform: translateX(calc(-1 * (var(--sidebar-w) + 1095px) / 2)) !important;
+                left: calc(50vw - (var(--sidebar-w) + 1095px) / 2) !important;
+                transform: none !important;
+                width: var(--sidebar-w) !important;
                 height: 100% !important;
             }
             .content {
