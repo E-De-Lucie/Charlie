@@ -995,6 +995,7 @@
         /* ===== MAX WIDTH FOR WIDE MONITORS ===== */
         .content {
             max-width: 1100px;
+            margin-right: auto;
         }
 
         /* ===== LANG SWITCHER IN HERO (desktop) ===== */
@@ -1115,6 +1116,7 @@
             box-shadow: none !important;
             padding: 32px !important;
             background: #fff !important;
+            text-align: center !important;
         }
         .contact-card:hover {
             box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
@@ -1320,11 +1322,48 @@
         @media (max-width: 768px) {
             .about-text p, .about p { line-height: 1.5 !important; font-size: 15px !important; }
         }
+
+        /* Make paw emojis grey on all platforms */
+        .paws, .paw-decoration {
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+        h1 span, .sidebar-name, .section-title {
+            /* inline emoji - harder to target */
+        }
+
+        /* ===== CENTERED LAYOUT ON WIDE SCREENS ===== */
+        @media (min-width: 769px) {
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            .wrapper {
+                display: flex;
+                width: 100%;
+                max-width: calc(var(--sidebar-w) + 1100px);
+                position: relative;
+            }
+            .sidebar {
+                position: sticky !important;
+                top: 0 !important;
+                left: auto !important;
+                height: 100vh !important;
+                flex-shrink: 0 !important;
+                align-self: flex-start !important;
+            }
+            .content {
+                margin-left: 0 !important;
+                flex: 1 !important;
+                max-width: 1100px !important;
+                min-width: 0 !important;
+            }
+        }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
 <body id="top">
-
+<div class="wrapper">
 <!-- ===== SIDEBAR ===== -->
 <div class="sidebar" id="sidebar">
     <img src="menu.jpg" alt="Charlie" class="sidebar-cat-img" id="cat-avatar">
@@ -1724,5 +1763,7 @@ e(s.colorDepth)+'" width="1" height="1" border="0" alt="TOPlist" />';
     });
 
 </script>
+</div><!-- /wrapper -->
+</div><!-- /wrapper -->
 </body>
 </html>
