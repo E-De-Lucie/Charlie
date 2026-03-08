@@ -1335,27 +1335,9 @@
             /* inline emoji - harder to target */
         }
 
-        /* ===== CENTERED LAYOUT ON WIDE SCREENS ===== */
+        /* ===== MAX WIDTH ON WIDE SCREENS ===== */
         @media (min-width: 769px) {
-            body {
-                display: flex;
-                justify-content: center;
-            }
-            .wrapper {
-                width: 100%;
-                max-width: calc(var(--sidebar-w) + 1095px);
-                position: relative;
-            }
-            .sidebar {
-                position: fixed !important;
-                top: 0 !important;
-                left: calc(50vw - (var(--sidebar-w) + 1095px) / 2) !important;
-                transform: none !important;
-                width: var(--sidebar-w) !important;
-                height: 100% !important;
-            }
             .content {
-                margin-left: var(--sidebar-w) !important;
                 max-width: 1095px !important;
             }
         }
@@ -1762,8 +1744,36 @@ e(s.colorDepth)+'" width="1" height="1" border="0" alt="TOPlist" />';
         });
     });
 
+
+<script>
+(function() {
+    var SIDEBAR_W = 260;
+    var CONTENT_MAX = 1095;
+    var TOTAL_W = SIDEBAR_W + CONTENT_MAX;
+    var sidebar = document.getElementById('sidebar');
+    var content = document.querySelector('.content');
+    
+    function centerLayout() {
+        if (window.innerWidth <= 768) {
+            sidebar.style.left = '';
+            content.style.marginLeft = '';
+            return;
+        }
+        var vw = window.innerWidth;
+        if (vw > TOTAL_W) {
+            var offset = Math.floor((vw - TOTAL_W) / 2);
+            sidebar.style.left = offset + 'px';
+            content.style.marginLeft = (offset + SIDEBAR_W) + 'px';
+        } else {
+            sidebar.style.left = '0px';
+            content.style.marginLeft = SIDEBAR_W + 'px';
+        }
+    }
+    
+    centerLayout();
+    window.addEventListener('resize', centerLayout);
+})();
 </script>
-</div><!-- /wrapper -->
 </div><!-- /wrapper -->
 </body>
 </html>
