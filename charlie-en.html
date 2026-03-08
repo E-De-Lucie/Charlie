@@ -1309,9 +1309,12 @@
                 max-height: 180px !important;
                 width: auto !important;
             }
-            .about-text {
-                overflow: hidden;
+            .about-grid::after {
+                content: "";
+                display: table;
+                clear: both;
             }
+            .about-text p, .about p { line-height: 1.5 !important; font-size: 15px !important; }
         }
 
         @media (max-width: 768px) {
@@ -1435,8 +1438,8 @@
 
         <div class="about-grid">
             <div>
-                <!-- Replace with actual cat photo: <img src="foto1.jpg" alt="Charlie" class="about-photo"> -->
-                <img src="foto1.jpg" alt="Charlie" class="about-photo">
+                <!-- Replace with actual cat photo: <img src="foto1.jpg" alt="Charlie" class="about-photo" onclick="openLightbox(this.src)" style="cursor:pointer;"> -->
+                <img src="foto1.jpg" alt="Charlie" class="about-photo" onclick="openLightbox(this.src)" style="cursor:pointer;">
             </div>
             <div class="about-text">
                 
