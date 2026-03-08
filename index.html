@@ -28,10 +28,12 @@
 
         /* ===== SIDEBAR ===== */
         .sidebar {
-            position: fixed;
-            top: 0; left: 0;
+            position: sticky;
+            top: 0;
             width: var(--sidebar-w);
-            height: 100%;
+            min-width: var(--sidebar-w);
+            height: 100vh;
+            align-self: flex-start;
             background: var(--dark);
             z-index: 100;
             display: flex;
@@ -166,7 +168,8 @@
 
         /* ===== MAIN CONTENT ===== */
         .content {
-            margin-left: var(--sidebar-w);
+            flex: 1;
+            min-width: 0;
             min-height: 100vh;
         }
 
@@ -1335,11 +1338,11 @@
             /* inline emoji - harder to target */
         }
 
-        /* ===== MAX WIDTH ON WIDE SCREENS ===== */
+        /* ===== CENTERED LAYOUT ===== */
+        body { display: flex; justify-content: center; background: #2a3d3d; }
+        .wrapper { display: flex; width: 100%; max-width: calc(var(--sidebar-w) + 1095px); }
         @media (min-width: 769px) {
-            .content {
-                max-width: 1095px !important;
-            }
+            .content { max-width: 1095px; }
         }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
@@ -1744,35 +1747,6 @@ e(s.colorDepth)+'" width="1" height="1" border="0" alt="TOPlist" />';
     });
 
 
-<script>
-(function() {
-    var SIDEBAR_W = 260;
-    var CONTENT_MAX = 1095;
-    var TOTAL_W = SIDEBAR_W + CONTENT_MAX;
-    var sidebar = document.getElementById('sidebar');
-    var content = document.querySelector('.content');
-    
-    function centerLayout() {
-        if (window.innerWidth <= 768) {
-            sidebar.style.left = '';
-            content.style.marginLeft = '';
-            return;
-        }
-        var vw = window.innerWidth;
-        if (vw > TOTAL_W) {
-            var offset = Math.floor((vw - TOTAL_W) / 2);
-            sidebar.style.left = offset + 'px';
-            content.style.marginLeft = (offset + SIDEBAR_W) + 'px';
-        } else {
-            sidebar.style.left = '0px';
-            content.style.marginLeft = SIDEBAR_W + 'px';
-        }
-    }
-    
-    centerLayout();
-    window.addEventListener('resize', centerLayout);
-})();
-</script>
 </div><!-- /wrapper -->
 </body>
 </html>
