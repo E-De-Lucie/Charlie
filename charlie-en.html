@@ -1295,6 +1295,24 @@
         @media (max-width: 768px) {
             .hero-paw-emoji { display: none !important; }
         }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                display: block !important;
+            }
+            .about-grid > div:first-child {
+                float: left;
+                margin-right: 16px;
+                margin-bottom: 8px;
+            }
+            .about-photo {
+                max-height: 180px !important;
+                width: auto !important;
+            }
+            .about-text {
+                overflow: hidden;
+            }
+        }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
@@ -1387,7 +1405,7 @@
                 
                 Hello, my name is
             </div>
-            <h1>Charlie <span class="hero-paw-emoji">🐾</span></h1>
+            <h1>Charlie <span>🐾</span></h1>
             
             <p class="tagline" data-lang="en">Your new buddy in Letná. Feel free to pet me — I'm friendly!</p>
         </div>
