@@ -537,8 +537,8 @@
             /* Content full width */
             .content { margin-left: 0; }
 
-            .hero-lang { display: none; }
-            .lang-section { display: none !important; }
+            .hero-lang { display: none !important; }
+            .lang-section { display: flex !important; }
 
 
             /* Sections padding */
@@ -982,12 +982,12 @@
             margin-right: 3px;
             vertical-align: middle;
         }
-        #bar-cs .flag-icon, .lang-btn[href="index2.html"] .flag-icon,
+        #bar-cs .flag-icon, .lang-btn[href="index.html"] .flag-icon,
         .lang-btn[href="charlie-cs.html"] .flag-icon {
             background: #d52b1e;
             color: white;
         }
-        #bar-en .flag-icon, .lang-btn[href="charlie-en2.html"] .flag-icon {
+        #bar-en .flag-icon, .lang-btn[href="charlie-en.html"] .flag-icon {
             background: #012169;
             color: white;
         }
@@ -1205,6 +1205,38 @@
         .donate-section .qr-account { color: #ccc !important; }
         .qr-label { color: #aaa !important; }
         [style*="color: var(--yellow)"], .naskenujte { color: #1a7a7a !important; }
+
+        /* ===== MOBILE LANG SECTION - AIRY ===== */
+        .lang-section {
+            background: transparent !important;
+            border: none !important;
+            padding: 16px 24px !important;
+            justify-content: flex-end !important;
+            gap: 10px !important;
+        }
+        .lang-section a {
+            flex: none !important;
+            padding: 6px 16px !important;
+            font-size: 14px !important;
+            border-radius: 20px !important;
+            background: rgba(255,255,255,0.08) !important;
+            color: #ccc !important;
+            font-weight: 600 !important;
+        }
+        .lang-section a:first-child {
+            background: rgba(255,255,255,0.08) !important;
+            color: #ccc !important;
+        }
+        .lang-section a:last-child {
+            background: rgba(255,255,255,0.08) !important;
+            color: #ccc !important;
+        }
+        .lang-section a.active-lang {
+            background: rgba(255,255,255,0.15) !important;
+            color: #fff !important;
+            outline: none !important;
+            border: 1px solid rgba(255,255,255,0.3) !important;
+        }
     </style>
     <link rel="icon" type="image/jpeg" href="menu.jpg">
 </head>
@@ -1218,8 +1250,8 @@
     
 
     <div class="lang-switcher">
-        <a class="lang-btn active" href="index2.html"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> CZ</a>
-        <a class="lang-btn " href="charlie-en2.html"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> EN</a>
+        <a class="lang-btn active" href="index.html"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> CZ</a>
+        <a class="lang-btn " href="charlie-en.html"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> EN</a>
     </div>
 
     <nav>
@@ -1303,15 +1335,15 @@
         </div>
         
     <div class="hero-lang">
-        <a href="index2.html" class="active-lang"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> Česky</a>
-        <a href="charlie-en2.html"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> English</a>
+        <a href="index.html" class="active-lang"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> Česky</a>
+        <a href="charlie-en.html"><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> English</a>
     </div>
     </section>
 
     <!-- LANGUAGE SWITCHER BAR (mobile only) -->
     <div class="lang-section">
-        <a href="index2.html" id="bar-cs" class="active-lang"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> Česky</a>
-        <a href="charlie-en2.html" id="bar-en" class=""><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> English</a>
+        <a href="index.html" id="bar-cs" class="active-lang"><img src="https://flagcdn.com/20x15/cz.png" width="20" height="15" alt="CZ" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> Česky</a>
+        <a href="charlie-en.html" id="bar-en" class=""><img src="https://flagcdn.com/20x15/gb.png" width="20" height="15" alt="EN" style="vertical-align:middle;margin-right:4px;border-radius:2px;"> English</a>
     </div>
 
     <!-- ABOUT -->
